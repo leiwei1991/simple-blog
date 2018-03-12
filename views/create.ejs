@@ -1,0 +1,23 @@
+<%- include('header') %>
+
+<div class="ui grid">
+  <div class="one wide column">
+      <img class="avatar" src="/img/<%= user.avatar %>">
+  </div>
+
+  <div class="fourteen wide column">
+    <form class="ui form segment" method="post">
+      <div class="field required">
+        <label>标题</label>
+        <input type="text" name="title">
+      </div>
+      <div class="field required">
+        <label>内容</label>
+        <textarea name="content" rows="15"></textarea>
+      </div>
+      <input type="submit" class="ui button" value="发布">
+    </form>
+  </div>
+</div>
+
+<%- include('footer') %>
