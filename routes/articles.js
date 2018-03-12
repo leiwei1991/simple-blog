@@ -84,14 +84,14 @@ router.get('/:articleId', function (req, res, next) {
 // GET /articles/:articleId/edit 更新文章页
 router.get('/:articleId/edit', checkLogin, function (req, res, next) {
   const articleId = req.params.articleId
-  const author = req.session.user._id
+  const author = req.session.user.name
 
   articleModel.getRawArticleById(articleId)
     .then(function (article) {
       if (!article) {
         throw new Error('该文章不存在')
       }
-      if (author.toString() !== article.author._id.toString()) {
+      if (author.toString() !== article.author.toString()) {
         throw new Error('权限不足')
       }
       res.render('edit', {
@@ -104,7 +104,7 @@ router.get('/:articleId/edit', checkLogin, function (req, res, next) {
 // POST /articles/:articleId/edit 更新一篇文章
 router.post('/:articleId/edit', checkLogin, function (req, res, next) {
   const articleId = req.params.articleId
-  const author = req.session.user._id
+  const author = req.session.user.name
   const title = req.fields.title
   const content = req.fields.content
 
@@ -126,7 +126,7 @@ router.post('/:articleId/edit', checkLogin, function (req, res, next) {
       if (!article) {
         throw new Error('文章不存在')
       }
-      if (article.author._id.toString() !== author.toString()) {
+      if (article.author.toString() !== author.toString()) {
         throw new Error('没有权限')
       }
 
