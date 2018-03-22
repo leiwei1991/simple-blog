@@ -76,3 +76,10 @@ a:hover {
 .article-content .tag.right a {
   color: #999;
 }
+
+#cell {
+  height: 100px;
+  width: 100%;
+  text-align:center;
+  line-height:100px;
+}
