@@ -1,10 +1,17 @@
 <div class="nav">
   <div class="ui grid">
-    <div class="four wide column"></div>
+    <div class="four wide column">
+
+      
+    </div>
 
     <div class="eight wide column">
       <a href="/articles"><h1><%= blog.title %></h1></a>
-      <p><%= blog.desc %></p>
+      <p>
+        I <%= parseInt((new Date().getTime() - new Date('1991-04-22').getTime()) / 86400000)%>
+        LOVE <%= parseInt((new Date().getTime() - new Date('1991-12-02').getTime()) / 86400000)%>
+        YOU <%= parseInt((new Date().getTime() - new Date('2018-01-12').getTime()) / 86400000)%>
+      </p>
     </div>
   </div>
 </div>
