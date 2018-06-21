@@ -1,7 +1,7 @@
 <div class="article-content">
   <div class="ui grid">
     <div class="one wide column">
-        <img class="avatar" src="/img/<%= user && user.avatar %>">
+        <img class="avatar" src="/img/upload_98134e7aad92b07d6aa360c44c0deb27.jpeg">
     </div>
 
     <div class="fourteen wide column">
@@ -12,7 +12,7 @@
           <span class="tag"><%= new Date(article.createTime).toLocaleString() %></span>
           <span class="tag right">
             <span>浏览(<%= article.pv || 0 %>)</span>
-          
+
             <% if (user && article.author && user.name.toString() === article.author.toString()) { %>
               <div class="ui inline dropdown">
                 <div class="text"></div>
