@@ -1,7 +1,7 @@
 <%- include('header') %>
 
 <div class="ui grid">
-  <div class="four wide column">
+  <div class="fifteen wide column">
     <a class="avatar"
        href="/articles?author=<%= user._id %>"
        data-title="<%= user.name %> | <%= ({m: '男', f: '女', x: '保密'})[user.gender] %>"
@@ -10,7 +10,7 @@
     </a>
   </div>
 
-  <div class="eight wide column">
+  <div class="fifteen wide column">
     <form class="ui form segment" method="post" action="/articles/<%= article._id %>/edit">
       <div class="field required">
         <label>标题</label>
@@ -18,7 +18,7 @@
       </div>
       <div class="field required">
         <label>内容</label>
-        <textarea name="content" rows="15"><%= article.content %></textarea>
+        <textarea name="content" rows="20"><%= article.content %></textarea>
       </div>
       <input type="submit" class="ui button" value="发布">
     </form>
